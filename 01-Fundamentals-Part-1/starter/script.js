@@ -201,4 +201,90 @@ if (hasDriversLicense && hasGoodVision && !isTired) {
 } else {
   console.log('Someone else should drive...');
 }
+
+//The Switch Statement
+
+const day = 'sunday';
+
+switch (day) {
+  case 'monday': //day === 'monday'
+    console.log('Plan course structure.');
+    console.log('Go to coding meetup.');
+    break;
+  case 'tuesday': //day === 'tuesday'
+    console.log('Prepare theory videos.');
+    break;
+  case 'wednesday': //day === 'wednesday'
+  case 'thursday': //day === 'thursday'
+    console.log('Write code examples.');
+    break;
+  case 'friday': //day === 'friday'
+    console.log('Record videos.');
+    break;
+  case 'saturday': //day === 'saturday'
+  case 'sunday': //day === 'sunday'
+    console.log('Enjoy the weekend :D');
+    break;
+  default:
+    console.log('Not a valid day!');
+}
+
+if (day === 'monday') {
+  console.log('Plan course structure.');
+  console.log('Go to coding meetup.');
+} else if (day === 'tuesday') {
+  console.log('Prepare theory videos.');
+} else if (day === 'wednesday' || day === 'thursday') {
+  console.log('Write code examples.');
+} else if (day === 'friday') {
+  console.log('Record videos.');
+} else if (day === 'saturday' || day === 'sunday') {
+  console.log('Enjoy the weekend :D');
+} else {
+  console.log('Not a valid day!');
+}
+
+Statements and Expressions
+
+Expression is a piece of code that produces a value.
+3 + 4 (example of an expression)
+1991 (is a expression too)
+true && false && !false
+
+Statements is like a bigger piece of code that is executed and which does not produce a value on itself.
+example:
+
+if (23 > 10) {
+  const str = '23 is bigger';
+}
+this IF is a statement. But the string itself is an expression. Expressions are always part of a statement.
+And Statements are like full sentences that translate our actions. The actions that we want to perform.
 */
+
+//The conditional (Ternary) operator
+
+const age = 23;
+
+// age >= 18
+//   ? console.log('I like to drink wine. 🍷')
+//   : console.log('I like to drink water. 💦');
+
+const drink = age >= 18 ? 'wine 🍷' : 'water 💦';
+
+console.log(drink);
+
+//doing the same but with if statement
+
+let drink2;
+
+if (age >= 18) {
+  drink2 = 'wine 🍷';
+} else {
+  drink2 = 'water 💦';
+}
+
+console.log(drink2);
+
+//with template literals
+
+console.log(`I like to drink ${age >= 18 ? 'wine 🍷' : 'water 💦'}`);
