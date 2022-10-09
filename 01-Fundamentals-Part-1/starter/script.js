@@ -259,7 +259,6 @@ if (23 > 10) {
 }
 this IF is a statement. But the string itself is an expression. Expressions are always part of a statement.
 And Statements are like full sentences that translate our actions. The actions that we want to perform.
-*/
 
 //The conditional (Ternary) operator
 
@@ -288,3 +287,4 @@ console.log(drink2);
 //with template literals
 
 console.log(`I like to drink ${age >= 18 ? 'wine 🍷' : 'water 💦'}`);
+*/
