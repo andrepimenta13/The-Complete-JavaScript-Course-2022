@@ -370,3 +370,10 @@ console.log(jonas);
 //   }, and he has ${this.hasDriversLicense ? 'a' : 'no'} driver's licence.`;
 // },
 */
+
+//Iteration: The for Loop
+
+//for loop keeps running while condition is TRUE
+for (let rep = 1; rep <= 10; rep++) {
+  console.log(`Lifting weights repetition ${rep}!`);
+}
