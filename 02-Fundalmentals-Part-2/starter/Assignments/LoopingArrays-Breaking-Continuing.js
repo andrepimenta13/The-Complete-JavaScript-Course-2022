@@ -60,7 +60,7 @@ function percentageOfWorld1(population) {
 }
 
 for (let i = 0; i < populations2.length; i++) {
-  percentages2[i] = percentageOfWorld1(populations2[i]);
+  percentages2.push(percentageOfWorld1(populations2[i]));
 }
 
 console.log(percentages2);
