@@ -114,33 +114,87 @@ console.log('Old function:', amplitude);
 // 2) Breaking up into sub-problems
 // -Merge two arrays?
 
-const temperatures1 = [3, -2, -6, -1, 'error', 9, 13, 17, 15, 14, 9, 5];
-const temperatures2 = [3, -2, -6, -1, 'error', 9, 13, 17, 15, 14, 9, 5];
+// const temperatures1 = [3, -2, -6, -1, 'error', 9, 13, 17, 15, 14, 9, 5];
+// const temperatures2 = [3, -2, -6, -1, 'error', 9, 13, 17, 15, 14, 9, 5];
 
-const calcTempAmplitudeNew = (t1, t2) => {
-  //   let temps = [...temps1, ...temps2]; //solution with spread operator
-  const temps = t1.concat(t2); //solution with concat method
+// const calcTempAmplitudeNew = (t1, t2) => {
+//   //   let temps = [...temps1, ...temps2]; //solution with spread operator
+//   const temps = t1.concat(t2); //solution with concat method
 
-  let max = temps[0];
-  let min = temps[0];
+//   let max = temps[0];
+//   let min = temps[0];
 
-  for (let i = 0; i < temps.length; i++) {
-    const curTemp = temps[i];
+//   for (let i = 0; i < temps.length; i++) {
+//     const curTemp = temps[i];
 
-    if (typeof curTemp !== 'number') continue;
+//     if (typeof curTemp !== 'number') continue;
 
-    if (curTemp > max) max = curTemp;
-    if (curTemp < min) min = curTemp;
-  }
-  return max - min;
-};
+//     if (curTemp > max) max = curTemp;
+//     if (curTemp < min) min = curTemp;
+//   }
+//   return max - min;
+// };
 
-const amplitudeNew = calcTempAmplitudeNew(temperatures1, temperatures2);
-console.log('New function:', amplitudeNew);
+// const amplitudeNew = calcTempAmplitudeNew(temperatures1, temperatures2);
+// console.log('New function:', amplitudeNew);
 
 //PROBLEM 3:
 //We are getting a error message when he first position of the array is an 'error' value.
 
 // 1) Understanding the problem
+// -When we have an 'error' value on the first position of the array, an error appears on console.
 
 // 2) Breaking up into sub-problems
+// -Remove 'error' values from arrays?
+
+const temperatures1 = [
+  'error',
+  3,
+  -2,
+  -6,
+  -1,
+  'error',
+  9,
+  13,
+  17,
+  15,
+  14,
+  9,
+  5,
+];
+const temperatures2 = [
+  'error',
+  3,
+  -2,
+  -6,
+  -1,
+  9,
+  13,
+  17,
+  15,
+  14,
+  9,
+  5,
+  'error',
+];
+
+const calcTempAmplitudeNew = (t1, t2) => {
+  //   let temps = [...temps1, ...temps2]; //solution with spread operator
+  const temps = t1.concat(t2); //solution with concat method
+
+  const tempsUnique = [...new Set(temps)]; //Remove duplicates
+
+  const index = tempsUnique.indexOf('error'); //Remove errors
+
+  if (index !== -1) tempsUnique.splice(index, 1);
+
+  tempsUnique.sort((a, b) => a - b);
+
+  let min = tempsUnique[0];
+  let max = tempsUnique[tempsUnique.length - 1];
+
+  return max - min;
+};
+
+const amplitudeNew = calcTempAmplitudeNew(temperatures1, temperatures2);
+console.log('New function:', amplitudeNew);
