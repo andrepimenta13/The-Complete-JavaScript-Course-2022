@@ -1,6 +1,5 @@
 // Remember, we're gonna use strict mode in all scripts now!
 'use strict';
-
 /*
 const x = 23;
 
@@ -69,9 +68,8 @@ switch (typeof b) {
   default:
     break;
 }
-*/
 
-//PROBLEM:
+//PROBLEM 1:
 //We work for a company building a smart home thermometer. Our most recent task is this: "Given an array of temperatures of one day, calculate the temperature amplitude. Keep in mind that sometimes there might be a sensor error."
 
 const temperatures = [3, -2, -6, -1, 'error', 9, 13, 17, 15, 14, 9, 5];
@@ -114,29 +112,29 @@ console.log('Old function:', amplitude);
 // 2) Breaking up into sub-problems
 // -Merge two arrays?
 
-// const temperatures1 = [3, -2, -6, -1, 'error', 9, 13, 17, 15, 14, 9, 5];
-// const temperatures2 = [3, -2, -6, -1, 'error', 9, 13, 17, 15, 14, 9, 5];
+const temperatures1 = [3, -2, -6, -1, 'error', 9, 13, 17, 15, 14, 9, 5];
+const temperatures2 = [3, -2, -6, -1, 'error', 9, 13, 17, 15, 14, 9, 5];
 
-// const calcTempAmplitudeNew = (t1, t2) => {
-//   //   let temps = [...temps1, ...temps2]; //solution with spread operator
-//   const temps = t1.concat(t2); //solution with concat method
+const calcTempAmplitudeNew = (t1, t2) => {
+  //   //   let temps = [...temps1, ...temps2]; //solution with spread operator
+  const temps = t1.concat(t2); //solution with concat method
 
-//   let max = temps[0];
-//   let min = temps[0];
+  let max = temps[0];
+  let min = temps[0];
 
-//   for (let i = 0; i < temps.length; i++) {
-//     const curTemp = temps[i];
+  for (let i = 0; i < temps.length; i++) {
+    const curTemp = temps[i];
 
-//     if (typeof curTemp !== 'number') continue;
+    if (typeof curTemp !== 'number') continue;
 
-//     if (curTemp > max) max = curTemp;
-//     if (curTemp < min) min = curTemp;
-//   }
-//   return max - min;
-// };
+    if (curTemp > max) max = curTemp;
+    if (curTemp < min) min = curTemp;
+  }
+  return max - min;
+};
 
-// const amplitudeNew = calcTempAmplitudeNew(temperatures1, temperatures2);
-// console.log('New function:', amplitudeNew);
+const amplitudeNew = calcTempAmplitudeNew(temperatures1, temperatures2);
+console.log('New function:', amplitudeNew);
 
 //PROBLEM 3:
 //We are getting a error message when he first position of the array is an 'error' value.
@@ -198,3 +196,4 @@ const calcTempAmplitudeNew = (t1, t2) => {
 
 const amplitudeNew = calcTempAmplitudeNew(temperatures1, temperatures2);
 console.log('New function:', amplitudeNew);
+*/
