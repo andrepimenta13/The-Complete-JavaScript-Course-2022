@@ -116,7 +116,7 @@ const temperatures1 = [3, -2, -6, -1, 'error', 9, 13, 17, 15, 14, 9, 5];
 const temperatures2 = [3, -2, -6, -1, 'error', 9, 13, 17, 15, 14, 9, 5];
 
 const calcTempAmplitudeNew = (t1, t2) => {
-  //   //   let temps = [...temps1, ...temps2]; //solution with spread operator
+  // const temps = [...temps1, ...temps2]; //solution with spread operator
   const temps = t1.concat(t2); //solution with concat method
 
   let max = temps[0];
@@ -197,3 +197,5 @@ const calcTempAmplitudeNew = (t1, t2) => {
 const amplitudeNew = calcTempAmplitudeNew(temperatures1, temperatures2);
 console.log('New function:', amplitudeNew);
 */
+
+//

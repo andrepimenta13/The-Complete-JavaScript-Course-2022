@@ -93,17 +93,17 @@ console.log(filipa);
 
 // Async await, Promises and requests to an API
 
-async function getData() {
-  await fetch('https://jsonplaceholder.typicode.com/posts/3')
+function getData() {
+  fetch('https://jsonplaceholder.typicode.com/posts/3')
     .then((response) => response.json())
     .then((data) => console.log(data))
     .catch((error) => console.log(error));
 }
 getData();
 
-async function getData() {
-  let response = await fetch('https://jsonplaceholder.typicode.com/posts/1');
-  let data = await response.json();
-  console.log(data);
-}
-getData();
+// async function getData() {
+//   let response = await fetch('https://jsonplaceholder.typicode.com/posts/1');
+//   let data = await response.json();
+//   console.log(data);
+// }
+// getData();
