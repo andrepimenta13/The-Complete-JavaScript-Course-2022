@@ -13,8 +13,8 @@ const printForecast = function (arr) {
   return console.log(concatStrings);
 };
 
-// printForecast(data1);
-// printForecast(data2);
+printForecast(data1);
+printForecast(data2);
 
 ///////////////
 
@@ -40,3 +40,4 @@ const printForecast2 = function (arr) {
 };
 
 printForecast2(data1);
+printForecast2(data2);
