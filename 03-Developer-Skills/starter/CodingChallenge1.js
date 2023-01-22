@@ -6,13 +6,15 @@ const strings = [];
 
 const printForecast = function (arr) {
   for (let i = 0; i < arr.length; i++) {
-    strings[i] = `${arr[i]}ºC in ${i + 1} days...`;
+    strings[i] = ` ${arr[i]}ºC in ${i + 1} days ...`;
   }
-  return console.log(strings.join(''));
+  let concatStrings = strings.join('');
+  concatStrings = '...' + concatStrings;
+  return console.log(concatStrings);
 };
 
-printForecast(data1);
-printForecast(data2);
+// printForecast(data1);
+// printForecast(data2);
 
 ///////////////
 
@@ -21,9 +23,20 @@ printForecast(data2);
 // - What is the X days? Answer: index + 1
 
 // 2) Breaking up into sub-problems
-// -Transform array into string
-// -Transform each element to string with Celcius ºC
-// -String needs to contain day (index + 1)
-// -Add ... between elements and start and end of string
-
+// - Transform array into string
+// - Transform each element to string with Celcius ºC
+// - String needs to contain day (index + 1)
+// - Add ... between elements and start and end of string
+// - Log string to console
 //Solution:
+
+const printForecast2 = function (arr) {
+  let str = '';
+  for (let i = 0; i < arr.length; i++) {
+    str += ` ${arr[i]}ºC in ${i + 1} days ...`;
+  }
+  str = '...' + str;
+  console.log(str);
+};
+
+printForecast2(data1);
