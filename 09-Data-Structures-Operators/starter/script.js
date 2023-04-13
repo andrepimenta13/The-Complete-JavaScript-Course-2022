@@ -41,7 +41,74 @@ const restaurant = {
       `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}.`
     );
   },
+
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(
+      `Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}.`
+    );
+  },
 };
+
+// Spread Operator
+
+const arr = [7, 8, 9];
+const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+console.log(badNewArr);
+
+const newArr = [1, 2, ...arr];
+console.log(newArr);
+
+console.log(...newArr);
+console.log(1, 2, 7, 8, 9);
+
+const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+console.log(newMenu);
+
+// Copy array
+
+const mainMenuCopy = [...restaurant.mainMenu];
+
+// Join two arrays
+
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+console.log(menu);
+
+// Iterables: arrays, strings, maps and sets, but NOT objects.
+const str = 'Jonas';
+const letters = [...str, '', 'S.'];
+console.log(letters);
+console.log(...str);
+// console.log(`${...str} Schmedtmann`);
+
+// Real-world example
+
+const ingredients = [
+  // prompt('Lets make pasta! Ingredient 1?'),
+  // prompt('Lets make pasta! Ingredient 2?'),
+  // prompt('Lets make pasta! Ingredient 3?'),
+];
+console.log(ingredients);
+
+// Old way
+restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
+
+// New way with spread operator
+restaurant.orderPasta(...ingredients);
+
+// Spread Operator with Objects
+
+const newRestaurant = { foundedIn: 1998, ...restaurant, founder: 'Guiseppe' };
+console.log(newRestaurant);
+
+// Copy Object
+
+const restaurantCopy = { ...restaurant };
+restaurantCopy.name = 'Ristorante Roma';
+console.log(restaurantCopy.name);
+console.log(restaurant.name);
+
+/*
+// Destructuring Objects
 
 restaurant.orderDelivery({
   time: '22:30',
@@ -54,8 +121,6 @@ restaurant.orderDelivery({
   address: 'Via del Sole, 21',
   starterIndex: 1,
 });
-
-// Destructuring Objects
 
 const { name, openingHours, categories } = restaurant;
 console.log(name, openingHours, categories);
@@ -87,7 +152,7 @@ const {
 } = openingHours;
 console.log(o, c);
 
-/*
+
 // Array Destructuring is a way of unpacking values from an array or an object into separate variables.
 
 const arr = [2, 3, 4];
