@@ -68,6 +68,7 @@ const rest2 = {
   owner: 'Giovanni Rossi',
 };
 
+/*
 // OR assignment operator - this operator assigns a variable to a variable if that variable is currently falsy.
 
 // rest2.numGuests = rest2.numGuests || 10;
@@ -96,7 +97,7 @@ rest2.owner &&= '<ANONYMOUS>';
 console.log(rest1);
 console.log(rest2);
 
-/*
+
 ////////////////////////////////////////////////////////////////
 // Nullish Coalescing Operator (??)
 // Nullish Coalescing Operator (??) works with nullish values ( null or undefined)
