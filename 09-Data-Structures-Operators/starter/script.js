@@ -47,8 +47,119 @@ const restaurant = {
       `Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}.`
     );
   },
+
+  orderPizza: function (mainIngredient, ...otherIngredients) {
+    console.log(mainIngredient);
+    console.log(otherIngredients);
+  },
 };
 
+/*
+////////////////////////////////////////////////////////////////
+// Nullish Coalescing Operator (??)
+// Nullish Coalescing Operator (??) works with nullish values ( null or undefined)
+
+restaurant.numGuests = 0;
+
+const guests = restaurant.numGuests || 10; // 10
+console.log(guests);
+
+// Nullish: null and undefined (Not 0 or '')
+const guestCorrect = restaurant.numGuests ?? 10;
+console.log(guestCorrect); // 0
+
+
+////////////////////////////////
+// Short Circuiting ( && and || )
+
+console.log('----- OR -----');
+
+// Use ANY date type, return ANY date type and short-circuiting
+
+// || (OR) operator = if the first value is a truthy value, it will immediately return that first value.
+// So the OR operator will return the first truthy value of all operands or simply the last value if all of them are falsy.
+// For practical applications, we can use the OR operator to set default values.
+
+console.log(3 || 'Jonas'); // 'Jonas'
+console.log('' || 'jonas'); // 'jonas'
+console.log(true || 0); // 'true'
+console.log(undefined || null); // 'null'
+
+console.log(undefined || 0 || '' || 'Hello' || 23 || null); // 'hello'
+
+restaurant.numGuests = 0;
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1);
+
+const guests2 = restaurant.numGuests || 10;
+console.log(guests2);
+
+console.log('----- AND -----');
+
+// && (AND) operator = AND operator works in the exact opposite way of the OR operator.
+// AND operator short circuits when the first value is falsy, and then immediately returns that falsy value.
+// AND operator will return the first falsy value or the last if all of them are truthy.
+// For practical applications, we can use the AND operator to execute code in the second operand if the first one is true.
+
+console.log(0 && 'Jonas'); // 0
+console.log(7 && 'Jonas'); // 'Jonas'
+
+console.log('Hello' && 23 && null && 'Jonas'); // null
+
+// Practical example
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushrooms', 'spinach');
+}
+
+restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
+
+
+////////////////////////////////////////////////////////////////
+// Rest pattern and Parameters
+
+// 1) Destructuring
+
+// Spread, because on RIGHT side of the assignment operator
+
+const arr = [1, 2, ...[3, 4]];
+
+// REST, because on LEFT side of the assignment operator
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+
+console.log(a, b, others);
+
+const [pizza, , risotto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+
+console.log(pizza, risotto, otherFood);
+
+// Objects
+const { sat, ...weekDays } = restaurant.openingHours;
+console.log(sat, weekDays);
+
+// 2) Functions
+const add = function (...numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+  console.log(sum);
+
+  // Modern solution, using reduce method
+  // return console.log(numbers.reduce((accu, current) => accu + current, 0));
+};
+add(2, 3);
+add(5, 3, 7, 2);
+add(8, 2, 5, 3, 2, 1, 4);
+
+const x = [23, 5, 7];
+add(...x);
+
+restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
+restaurant.orderPizza('mushrooms');
+
+
+////////////////////////////////////////////////////////////////
 // Spread Operator
 
 const arr = [7, 8, 9];
@@ -107,7 +218,7 @@ restaurantCopy.name = 'Ristorante Roma';
 console.log(restaurantCopy.name);
 console.log(restaurant.name);
 
-/*
+
 // Destructuring Objects
 
 restaurant.orderDelivery({
