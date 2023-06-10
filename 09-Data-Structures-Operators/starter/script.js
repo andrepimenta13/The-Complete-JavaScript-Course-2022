@@ -55,6 +55,95 @@ const restaurant = {
 };
 
 ////////////////////////////////////////////////////////////////////
+// Maps - A map is a data structure that we can use to map values to keys
+
+const rest = new Map();
+
+rest.set('name', 'Classico Italiano');
+rest.set(1, 'Firenze');
+console.log(rest.set(2, 'Lisbon, Portugal'));
+
+rest
+  .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+  .set('open', 11)
+  .set('close', 23)
+  .set(true, 'We are open :D')
+  .set(false, 'We are closed :(');
+
+console.log(rest.get('name'));
+console.log(rest.get(true));
+console.log(rest.get(1));
+
+const time = 8;
+console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
+
+console.log(rest.has('categories'));
+
+console.log(rest);
+rest.delete(2);
+console.log(rest);
+
+console.log(rest.size);
+// rest.clear();
+console.log(rest);
+
+// Using arrays or objects as map keys
+
+const arr = [1, 2];
+
+rest.set(arr, 'Test');
+rest.set(document.querySelector('h1'), 'Heading');
+console.log(rest);
+
+console.log(rest.get(arr));
+
+/*
+////////////////////////////////////////////////////////////////////
+// Sets - are basically just a collection of unique values. A set can never have any duplicates.
+
+const ordersSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Risotto',
+  'Pasta',
+  'Pizza',
+]);
+
+console.log(ordersSet);
+
+console.log(new Set('Jonas'));
+
+console.log(ordersSet.size);
+console.log(ordersSet.has('Pizza'));
+console.log(ordersSet.has('Bread'));
+ordersSet.add('Garlic Bread');
+ordersSet.add('Garlic Bread');
+ordersSet.delete('Risotto');
+console.log(ordersSet);
+// ordersSet.clear();
+// console.log(ordersSet);
+
+for (const order of ordersSet) console.log(order);
+
+// The main use case of sets is actually to remove duplicates of arrays
+// Example
+
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+console.log(staff);
+
+const staffUnique = new Set(staff);
+const staffUniqueArray = [...new Set(staff)];
+
+console.log(staffUnique);
+console.log(staffUniqueArray);
+console.log(
+  new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size
+);
+
+console.log(new Set('jonasschmedtmann').size);
+
+////////////////////////////////////////////////////////////////////
 // Looping Objects: Object Keys, Values and Entries
 
 // Looping over Property NAMES/keys in an object
@@ -83,7 +172,7 @@ console.log(entries);
 for (const [day, { open, close }] of entries) {
   console.log(`On ${day}, we open at ${open} and close at ${close}`);
 }
-/*
+
 ////////////////////////////////////////////////////////////////////
 // Optional Chaining (?.)
 if (restaurant.openingHours && restaurant.openingHours.mon)

@@ -105,3 +105,7 @@ for (const player of game.scored) {
   scorers[player] ? scorers[player]++ : (scorers[player] = 1);
 }
 console.log(scorers);
+
+const gameV2 = { ...game, scorers };
+console.log(gameV2);
+console.log(game);
