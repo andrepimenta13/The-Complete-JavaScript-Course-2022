@@ -54,6 +54,7 @@ const restaurant = {
   },
 };
 
+/*
 ////////  ///////////////////////////////////////////////////////////
 // Working with Strings - Part 3
 
@@ -119,7 +120,7 @@ planesInLine(5);
 planesInLine(3);
 planesInLine(12);
 
-/*
+
 ////////  ///////////////////////////////////////////////////////////
 // Working with Strings - Part 2
 
