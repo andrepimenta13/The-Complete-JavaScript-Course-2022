@@ -44,10 +44,8 @@ document.body.append(document.createElement('button'));
 document.body.append(document.createElement('textarea'));
 document.body.append(document.createElement('button'));
 
-const text = document.querySelector('textarea').value;
 document.querySelector('button').addEventListener('click', () => {
   const text = document.querySelector('textarea').value;
-
   const rows = text.split('\n');
 
   for (const [i, row] of rows.entries()) {
